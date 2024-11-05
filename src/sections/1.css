@@ -1,8 +1,8 @@
 /* Container for each slider image with fixed dimensions */
 .slider-image-container {
   position: relative;
-  width: 340px; /* Set a fixed width for the images */
-  height: 200px; /* Set a fixed height for the images */
+  width: 340px;
+  height: 200px;
   overflow: hidden;
   border-radius: 16px; /* Optional: round the corners */
 }

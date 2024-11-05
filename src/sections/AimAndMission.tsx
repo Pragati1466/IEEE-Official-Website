@@ -3,9 +3,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { AIM } from '../constants/index'; // Ensure your AIM data is correctly imported
 import { FaRegLightbulb, FaLaptopCode, FaRegHandshake, FaHistory } from 'react-icons/fa';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css'; 
 import AOS from 'aos'; // Import AOS
-import './1.css'; // Ensure your CSS file is correctly imported
+import './1.css'; 
 
 const AimAndMission = () => {
     const icons = [FaRegLightbulb, FaLaptopCode, FaRegHandshake, FaHistory];

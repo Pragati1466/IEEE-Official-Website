@@ -14,8 +14,8 @@ const AboutSb = () => {
     // Initialize AOS
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Animation duration
-            once: true, // Whether animation should happen only once
+            duration: 1000,
+            once: true,
         });
     }, []);
 
@@ -52,8 +52,8 @@ const AboutSb = () => {
                         {/* IEEE Student Branch Section */}
                         <motion.div
                             className='flex flex-col md:flex-row items-center mb-24'
-                            data-aos="fade-up" // AOS animation
-                            data-aos-delay="200" // Delay for staggered animation
+                            data-aos="fade-up"
+                            data-aos-delay="200" 
                         >
                             <motion.div className='md:w-1/3 mb-8 md:mb-0' data-aos="fade-right"> {/* AOS animation */}
                                 <Image src={ABOUTSB[0].sbImage} alt="IEEE Logo" width={200} height={200} className="mx-auto" />
