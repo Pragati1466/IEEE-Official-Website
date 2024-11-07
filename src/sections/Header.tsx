@@ -1,15 +1,34 @@
 'use client';
+
 import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import { FaLinkedin, FaInstagram, FaBars, FaEnvelope } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
-import {Events, scrollSpy, scroller } from "react-scroll";
+import { Events, scrollSpy, scroller } from "react-scroll";
 import Image from "next/image";
-
 
 const iconSize = 24;
 
+// Email click handler function
+const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const emailTo = "igdtuieee@gmail.com";
+    const ccEmail = "igdtuieee@gmail.com";
+    const subject = encodeURIComponent("Contact from Website");
+    const body = encodeURIComponent("Hello IEEE IGDTUW Team,");
+
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&cc=${ccEmail}&su=${subject}&body=${body}`;
+
+    const newWindow = window.open(gmailLink, "_blank");
+
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        alert("It seems like the pop-up was blocked. Please allow pop-ups for this site.");
+    }
+};
+
+// Socials data
 const Socials = [
     {
         name: "LinkedIn",
@@ -32,8 +51,9 @@ const Socials = [
     {
         name: "Email",
         icon: <FaEnvelope size={iconSize} color="#ffffff" />,
-        link: "#",
+        link: "#",  // Email is handled by onClick
         hoverColor: "#d44638",
+        onClick: handleEmailClick  // Assign the email click handler here
     },
 ];
 
@@ -52,18 +72,9 @@ const Navbar = () => {
         easing: 'easeInOutQuart'
     };
 
-    const handleEmailClick = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-        const emailTo = "igdtuieee@gmail.com";
-        const ccEmail = "igdtuieee@gmail.com";
-        const subject = encodeURIComponent("Contact from Website");
-        const body = encodeURIComponent("Hello IEEE IGDTUW Team,");
-        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&cc=${ccEmail}&su=${subject}&body=${body}`;
-        window.open(gmailLink, "_blank");
-    };
-
     const handleCustomScroll = (targetId: string) => {
         scroller.scrollTo(targetId, scrollConfig);
+        setActiveSection(targetId);  // Set the active section when clicked
     };
 
     useEffect(() => {
@@ -108,7 +119,6 @@ const Navbar = () => {
                 clearTimeout(timeoutId);
             }
         };
-        
     }, []);
 
     const toggleMenu = () => {
@@ -128,9 +138,7 @@ const Navbar = () => {
     `;
 
     return (
-
         <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
-             
             <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
                 <div
                     onClick={() => handleCustomScroll('about')}
@@ -224,10 +232,11 @@ const Navbar = () => {
                 <div className="hidden md:flex flex-row gap-5 items-center">
                     {Socials.map((social) => (
                         <a
+                            key={social.name}
                             href={social.name === "Email" ? "#" : social.link}
                             target={social.name === "Email" ? "_self" : "_blank"}
                             rel="noopener noreferrer"
-                            key={social.name}
+                            onClick={social.onClick}  
                             className="flex items-center justify-center text-gray-200 hover:text-gray-300"
                         >
                             {social.icon}
@@ -238,13 +247,12 @@ const Navbar = () => {
                 {/* Mobile Menu Button (Hamburger) */}
                 <div
                     onClick={toggleMenu}
-                    className={`md:hidden rounded-md p-2 transition-all duration-300 ${isMenuOpen ? 'bg-black/50' : 'bg-black/25'
-                        }`}
+                    className={`md:hidden rounded-md p-2 ${isMenuOpen ? 'bg-[#a855f7]' : 'bg-transparent'} cursor-pointer`}
                 >
                     {isMenuOpen ? (
-                        <SiX size={30} color="#ffffff" />
+                        <SiX size={24} className="text-white" />
                     ) : (
-                        <FaBars size={30} color="#ffffff" />
+                        <FaBars size={24} className="text-white" />
                     )}
                 </div>
             </div>
@@ -300,10 +308,11 @@ const Navbar = () => {
                             <div className="flex flex-row gap-5 items-center justify-center mt-4">
                                 {Socials.map((social) => (
                                     <a
+                                        key={social.name}
                                         href={social.name === "Email" ? "#" : social.link}
                                         target={social.name === "Email" ? "_self" : "_blank"}
                                         rel="noopener noreferrer"
-                                        key={social.name}
+                                        onClick={social.onClick}  
                                         className="flex items-center justify-center text-gray-200 hover:text-gray-300"
                                     >
                                         {social.icon}
