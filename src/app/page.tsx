@@ -15,33 +15,68 @@ const Home = () => {
     const crsr = document.getElementById("cursor");
     const blur = document.getElementById("cursor-blur");
 
-    const handleMouseMove = (event: MouseEvent) => {
-        if (crsr && blur) {
-            crsr.style.left = `${event.clientX}px`;
-            crsr.style.top = `${event.clientY}px`;
-            blur.style.left = `${event.clientX - 150}px`;
-            blur.style.top = `${event.clientY - 150}px`;
+    // Throttle function to limit event frequency
+    // Throttle function to limit event frequency
+// Throttle function to limit event frequency
+const throttle = (func: (...args: any[]) => void, limit: number) => {
+  let lastFunc: ReturnType<typeof setTimeout>;
+  let lastRan: number;
+
+  return (...args: any[]) => {
+    const context = this; // `this` will refer to the context of the surrounding scope (no issue here)
+
+    if (!lastRan) {
+      func.apply(context, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(() => {
+        if (Date.now() - lastRan >= limit) {
+          func.apply(context, args);
+          lastRan = Date.now();
         }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+};
+
+
+    // Mouse move handler
+    const handleMouseMove = (event:MouseEvent) => {
+      if (crsr && blur) {
+        // Use transform for smoother performance
+        crsr.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        blur.style.transform = `translate(${event.clientX - 150}px, ${event.clientY - 150}px)`;
+      }
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    // Throttle the mouse move event to run at a maximum of once every 50ms
+    const throttledMouseMove = throttle(handleMouseMove, 50);
 
+    // Event listener for mouse move
+    document.addEventListener("mousemove", throttledMouseMove);
+
+    // Cleanup the event listener on component unmount
     return () => {
-        document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", throttledMouseMove);
     };
   }, []);
+
   return (
     <>
+      {/* Cursor elements */}
       <div id="cursor"></div>
       <div id="cursor-blur"></div>
+
+      {/* Main Sections */}
       <Header />
       <Hero />
       <PhotoSlider />
       <AboutSb />
       <AimAndMission />
-      <Events/>
-      <Team/>
-      <Faq/>
+      <Events />
+      <Team />
+      <Faq />
       <Footer />
     </>
   );
