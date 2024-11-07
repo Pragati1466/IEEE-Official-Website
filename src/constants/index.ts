@@ -5,7 +5,7 @@ Nishant
 Good Events of WIEmpower
 */
 import akankshaRani from "@/assets/teamPic/chair_akanksha.jpg";
-import gunjanGoyal from "@/assets/teamPic/chair_akanksha.jpg"; // Add this line for Gunjan's image
+import gunjanGoyal from "@/assets/teamPic/gunjangoyal.jpg"; // Add this line for Gunjan's image
 import shantiKumari from "@/assets/teamPic/viceChair_shanti.jpg"; // Add this line for Shanti's image
 import arya from "@/assets/teamPic/wieViceChair_arya.jpeg"; // Add this line for Arya's image
 import vanshikaSaini from "@/assets/teamPic/gs_vanshika.jpg"; // Add this line for Vanshika's image
