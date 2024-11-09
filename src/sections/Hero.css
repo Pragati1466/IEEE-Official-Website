@@ -1,12 +1,46 @@
-/* Hero.css */
+.navbar {
+  position: fixed; /* Ensures navbar stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000; /* Solid black background */
+  z-index: 20; /* Higher z-index to stay above other content */
+  padding: 10px 20px;
+}
 
-/* Loading Screen */
+.navbar a {
+  color: white; /* Text color for links */
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  background-color: #555; /* Slight hover effect */
+}
+
 .loading-screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #030014;
+  position: fixed; /* Ensure it stays on top during loading */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./image.png'); /* Same background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px); /* Match the blur effect */
+}
+
+.loading-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Match the dark overlay with opacity */
+  z-index: -1; /* Keep the overlay behind content */
 }
 
 .loading-logo {
@@ -47,25 +81,108 @@
 }
 
 .hero-section {
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #030014;
   min-height: 100vh;
   padding: 20px;
+  margin-top: 60px; /* Add margin to ensure space for the navbar */
+  background-image: url('./image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Hero Content Styling */
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Slight dark overlay for text readability */
+  z-index: 2; /* Ensures overlay is above the background */
+}
+
 .hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white; /* Ensures text stands out */
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  color: white;
-  backdrop-filter: blur(10px);
+  justify-content: center;
 }
 
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 40px; /* Consistent gap below the heading */
+}
+
+.hero-content p {
+  font-size: 3rem;
+  margin-bottom: 40px; /* Consistent gap below the paragraph */
+}
+
+.hero-content button {
+  margin-top:10px;
+  padding: 15px 30px; /* Larger button padding */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.75rem;
+  margin-left:50px;
+}
+
+.counters {
+  display: flex;
+  flex-wrap: wrap; /* Allows counters to wrap to new lines */
+  justify-content: space-between; /* Ensures there is space between counters */
+  gap: 30px; /* Adds gap between items */
+  width: 100%;
+  max-width: 1000px; /* Limit the total width */
+  padding: 20px 0;
+  margin-top: 5px; /* Increased top margin to push the counters down further */
+  margin-left: 70px; /* Added left margin to shift it to the right */
+}
+
+/* Counters Section */
+.counters {
+  display: flex;
+  justify-content: space-between; /* Spread counters from left to right */
+  width: 100%;
+  max-width: 1000px; /* You can adjust this to control the width of the counter section */
+  padding: 40px 0;
+  margin-top: 50px; /* Keeps consistent gap from hero content */
+  align-items: center; /* Vertically aligns counters in the center */
+}
+
+.counter {
+  text-align: center;
+  color: #ccc;
+  flex: 1 1 30%; /* Allows the counter elements to scale responsively */
+  min-width: 250px; /* Minimum size to maintain readability */
+  max-width: 300px; /* Maximum width for each counter */
+  margin: 10px 0; /* Adds margin for spacing */
+}
+
+.counter h2 {
+  font-size: 2.5rem;
+  color: #7042f8;
+  margin-bottom: 10px;
+}
+
+.counter p {
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #ffffff;
+}
 .text-center h1,
 .text-center p {
   margin-bottom: 20px;
@@ -93,7 +210,7 @@
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -122,32 +239,6 @@
   transform: scale(1.1);
 }
 
-/* Counters Section */
-.counters {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 600px;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-.counter {
-  text-align: center;
-  color: #ccc;
-}
-
-.counter h2 {
-  font-size: 1.25rem;
-  color: #7042f8;
-  margin-bottom: 10px;
-}
-
-.counter p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-}
 
 /* Responsive Styling */
 @media (max-width: 768px) {
