@@ -47,7 +47,7 @@ const Team = () => {
                         <div className="absolute inset-x-0 flex items-center justify-center text-white mt-[8%]"> 
                             <div className="text-center">
                                 <h3 className="text-lg font-semibold">{formatName(member.name)}</h3>
-                                <p className="mb-2">{member.role}</p>
+                                <h4>{member.role}</h4>
                             </div>
                         </div>
                     </div>
