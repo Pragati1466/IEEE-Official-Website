@@ -28,7 +28,6 @@ const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     }
 };
 
-// Socials data
 const Socials = [
     {
         name: "LinkedIn",
