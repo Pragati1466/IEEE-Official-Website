@@ -213,13 +213,6 @@ const Navbar = () => {
                         </div>
 
                         <div
-                            onClick={() => handleCustomScroll('ieeeWeek24')}
-                            className={navLinkClass('ieeeWeek24')}
-                        >
-                            IEEE Week
-                        </div>
-
-                        <div
                             onClick={() => handleCustomScroll('contact-us')}
                             className={navLinkClass('contact-us')}
                         >
@@ -298,9 +291,6 @@ const Navbar = () => {
                             )}
                             <div onClick={() => handleCustomScroll('team')} className="text-gray-200 cursor-pointer hover:text-[#a855f7]">
                                 Team
-                            </div>
-                            <div onClick={() => handleCustomScroll('IeeeWeek24')} className="text-gray-200 cursor-pointer hover:text-[#a855f7]">
-                                IEEE Week
                             </div>
                             <div onClick={() => handleCustomScroll('contact-us')} className="text-gray-200 cursor-pointer hover:text-[#a855f7]">
                                 Contact
