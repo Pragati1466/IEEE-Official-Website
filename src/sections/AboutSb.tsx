@@ -60,25 +60,37 @@ const AboutSb = () => {
                             </motion.div>
                             <motion.div className='md:w-2/3 md:pl-8' data-aos="fade-left"> {/* AOS animation */}
                                 <h3 className='text-4xl font-semibold mb-4 text-[#9563ff]'>IEEE IGDTUW Student Branch</h3>
-                                <p className='italic text-2xl mb-4 text-neutral-400'>{ABOUTSB[0].sbMission}</p>
-                                <p className='text-lg text-gray-300'>{ABOUTSB[0].sbDetails}</p>
+                                <p className='italic text-xl mb-4 text-neutral-400 text-justify'>{ABOUTSB[0].sbMission}</p>
+                                <ul className='list-disc pl-6 text-lg text-gray-300 text-justify'>
+                                  {ABOUTSB[0].sbDetails.map((detail, index) => (
+                                    <li key={index}>{detail}</li>
+                                  ))}
+                                </ul>
                             </motion.div>
                         </motion.div>
 
+
                         {/* WIE Chapter Section */}
-                        <motion.div
-                            className='flex flex-col md:flex-row-reverse items-center'
-                            data-aos="fade-up" // AOS animation
-                            data-aos-delay="400" // Delay for staggered animation
-                        >
-                            <motion.div className='md:w-1/3 mb-8 md:mb-0' data-aos="fade-left"> {/* AOS animation */}
-                                <Image src={CHAPTERS[0].chapterLogo} alt="WIE Logo" width={200} height={200} className="mx-auto" />
-                            </motion.div>
-                            <motion.div className='md:w-2/3 md:pr-8 text-right' data-aos="fade-right"> {/* AOS animation */}
-                                <h3 className='text-4xl font-semibold mb-4 text-[#9563ff]'>{CHAPTERS[0].chapterName}</h3>
-                                <p className='text-lg text-gray-300'>{CHAPTERS[0].chapterDetails}</p>
-                            </motion.div>
-                        </motion.div>
+<motion.div
+    className='flex flex-col md:flex-row-reverse items-center'
+    data-aos="fade-up" // AOS animation
+    data-aos-delay="400" // Delay for staggered animation
+>
+    <motion.div className='md:w-1/3 mb-8 md:mb-0' data-aos="fade-left"> {/* AOS animation */}
+        <Image src={CHAPTERS[0].chapterLogo} alt="WIE Logo" width={200} height={200} className="mx-auto" />
+    </motion.div>
+    <motion.div className='md:w-2/3 md:pr-8 text-right' data-aos="fade-right"> {/* AOS animation */}
+        <h3 className='text-4xl font-semibold mb-4 text-[#9563ff]'>{CHAPTERS[0].chapterName}</h3>
+        
+        {/* Render the chapter details as a list */}
+        <ul className='list-disc pl-6 text-lg text-gray-300 text-justify'>
+            {CHAPTERS[0].chapterDetails.map((detail, index) => (
+                <li key={index}>{detail}</li>
+            ))}
+        </ul>
+    </motion.div>
+</motion.div>
+
                     </div>
                 </motion.div>
             </div>

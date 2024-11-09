@@ -4,6 +4,8 @@
 
 body {
   background-color: #000;
+
+  overflow-x: hidden;
   color: #fff;
 }
 
@@ -79,7 +81,7 @@ body {
 
   filter: blur(80px);
   z-index: 9;
-  transition: all linear 0.4s;
+  transition: all linear 0.3s;
 }
 
 /* Bouncing animation for the dots */

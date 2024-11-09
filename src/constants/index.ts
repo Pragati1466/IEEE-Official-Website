@@ -5,7 +5,7 @@ Nishant
 Good Events of WIEmpower
 */
 import akankshaRani from "@/assets/teamPic/chair_akanksha.jpg";
-import gunjanGoyal from "@/assets/teamPic/chair_akanksha.jpg"; // Add this line for Gunjan's image
+import gunjanGoyal from "@/assets/teamPic/gunjangoyal.jpg"; // Add this line for Gunjan's image
 import shantiKumari from "@/assets/teamPic/viceChair_shanti.jpg"; // Add this line for Shanti's image
 import arya from "@/assets/teamPic/wieViceChair_arya.jpeg"; // Add this line for Arya's image
 import vanshikaSaini from "@/assets/teamPic/gs_vanshika.jpg"; // Add this line for Vanshika's image
@@ -16,7 +16,7 @@ import sakshiBhushan from "@/assets/teamPic/em_sakshi.jpg"; // Add this line for
 import riyaJain from "@/assets/teamPic/em_riya.jpg"; // Add this line for Riya's image
 import adhishreeSingh from "@/assets/teamPic/pr_adhishree.jpg"; // Add this line for Adhishree's image
 import sakshiSahu from "@/assets/teamPic/pr_sakshi.jpg"; // Add this line for Sakshi Sahu's image
-import namitaBhatt from "@/assets/teamPic/creative_khushi.png"; // Add this line for Namita's image
+import namitaBhatt from "@/assets/teamPic/namitabhatt.jpeg"; // Add this line for Namita's image
 import khushiKankheria from "@/assets/teamPic/creative_khushi.png"; // Add this line for Khushi's image
 import sakshiSharma from "@/assets/teamPic/hr_sakshi.jpg"; // Add this line for Sakshi Sharma's image
 import divyaVerma from "@/assets/teamPic/content_divya.jpeg"; // Add this line for Divya's image
@@ -246,18 +246,27 @@ export const FACULTY = [
 
 export const ABOUTSB = [
   {
-      sbMission: '"To foster innovation and technical excellence among young engineers, promoting socially responsible advancements that contribute to a globally competitive India."',
-      sbDetails: "IEEE IGDTUW began its inspiring journey as IEEE IGIT, inaugurated on February 6, 2004, with just 33 members. Now, the student branch has grown to over 200 active members, offering a vibrant community for aspiring women engineers. IEEE IGDTUW provides a wide range of platforms that allow students to host and participate in engaging technical and non-technical events, as well as national and international conferences.Our mission is to instill technical expertise, leadership, and confidence in students through a variety of year-round events such as IEEE Week, IEEE Day Celebrations, and Student Interest Groups (SIGs), helping them excel both academically and professionally.We are committed to offering the best opportunities to our members, continually inspiring and empowering students to become exceptional engineers and professionals.",
+      sbMission: '"We aim to foster innovation and technical excellence among young engineers, promoting socially responsible advancements that contribute to a globally competitive India."',
+      sbDetails: [
+        "IEEE IGDTUW began its inspiring journey as IEEE IGIT, inaugurated on February 6, 2004, with just 33 members.",
+        "Now, the student branch has grown to over 200 active members, offering a vibrant community for aspiring women engineers.",
+        "IEEE IGDTUW provides a wide range of platforms that allow students to host and participate in technical and non-technical events, as well as national and international conferences.",
+        "Our mission is to instill technical expertise, leadership, and confidence in students through a variety of year-round events such as IEEE Week, IEEE Day Celebrations, and Student Interest Groups (SIGs).",
+       
+      ],
       sbImage: ieeeLogo,
   }
-
 ];
 
 export const CHAPTERS = [
   {
       chapterName: "WIE IGDTUW",
-      chapterDetails: 'At IEEE WIE IGDTUW, we aim to inspire young girls to pursue technical roles and become confident leaders, leaving a positive impact on society. Throughout the year, we work tirelessly through various initiatives to achieve this goal, empowering the next generation of women engineers.A proud recipient of the prestigious Darrel Chong Award (Gold, 2016-17), IEEE WIE IGDTUW is recognized for its "Sparsh Outreach Program." Through Sparsh, volunteers regularly visit the Kilkari orphanage to mentor and inspire the girls, sharing experiences that go beyond academics. These meaningful connections help build growth, confidence, and inspiration on both sides, and we are committed to continuing such impactful efforts in the future.',
-      chapterLogo: wieLogo,
+      chapterDetails:[ "At IEEE WIE IGDTUW, we aim to inspire young girls to pursue technical roles and become confident leaders.",
+      " Throughout the year, we work tirelessly through various initiatives to achieve this goal, empowering the next generation of women engineers.", 
+     "A proud recipient of the prestigious Darrel Chong Award (Gold, 2016-17), IEEE WIE IGDTUW is recognized for its 'Sparsh Outreach Program'." ,
+      "Through Sparsh, volunteers regularly visit the Kilkari orphanage to mentor and inspire the girls, sharing experiences that go beyond academics.",
+      "These meaningful connections help build growth, confidence, and inspiration on both sides, and we are committed to continuing such impactful efforts in the future.",
+        ] , chapterLogo: wieLogo,
   }
 ];
 
