@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import starsBg from "@/assets/extraPics/stars_bg_2.jpg";
+import bg from "@/assets/extraPics/bg.jpg";
 import gridLines from "@/assets/extraPics/grid_lines.jpg";
 import { ABOUTSB, CHAPTERS } from '@/constants';
 import './Hero.css';
@@ -23,13 +23,16 @@ const AboutSb = () => {
         <section id="about" className='py-20 md:py-24 min-h-screen flex items-center'>
             <div className='container'>
                 <motion.div
-                    className='border border-white/15 py-24 rounded-xl overflow-hidden relative'
+                    className="border border-white/15 py-24 rounded-xl overflow-hidden relative"
                     style={{
-                        backgroundImage: `url(${starsBg.src})`,
+                        backgroundImage: `url(${bg.src})`,
                         backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'brightness(0.75)', // Darkens the background image
                     }}
                     initial="hidden"
                     animate="visible"
+                    
                 >
                     <div
                         className='absolute inset-0 bg-[rgb(24,13,41)] bg-blend-overlay'
