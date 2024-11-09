@@ -16,7 +16,7 @@ import sakshiBhushan from "@/assets/teamPic/em_sakshi.jpg"; // Add this line for
 import riyaJain from "@/assets/teamPic/em_riya.jpg"; // Add this line for Riya's image
 import adhishreeSingh from "@/assets/teamPic/pr_adhishree.jpg"; // Add this line for Adhishree's image
 import sakshiSahu from "@/assets/teamPic/pr_sakshi.jpg"; // Add this line for Sakshi Sahu's image
-import namitaBhatt from "@/assets/teamPic/creative_khushi.png"; // Add this line for Namita's image
+import namitaBhatt from "@/assets/teamPic/namitabhatt.jpeg"; // Add this line for Namita's image
 import khushiKankheria from "@/assets/teamPic/creative_khushi.png"; // Add this line for Khushi's image
 import sakshiSharma from "@/assets/teamPic/hr_sakshi.jpg"; // Add this line for Sakshi Sharma's image
 import divyaVerma from "@/assets/teamPic/content_divya.jpeg"; // Add this line for Divya's image
