@@ -16,9 +16,9 @@ const Footer = () => {
         <div id="contact-us" className="relative" data-aos="fade-up" data-aos-offset="200">
             <div className="w-full h-[2px] bg-gradient-to-r from-[#7042f8] to-[#00c6ff] shadow-lg mb-5" data-aos="fade-down" data-aos-duration="1500"></div>
 
-            <footer className="w-full bg-[#03001417] text-gray-300 py-6 backdrop-blur-md shadow-inner shadow-[#2A0E61]/50">
+            <div className="w-full bg-[#03001417] text-gray-300 py-6 backdrop-blur-md shadow-inner shadow-[#2A0E61]/50">
                 <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm">
-                    
+                    {/* Contact Information */}
                     <div className="mb-8 md:mb-0" data-aos="fade-right">
                         <Image
                             src={require('../assets/logos/white_logo.png')}
@@ -33,6 +33,7 @@ const Footer = () => {
                         <p className="mb-2">Email: <a href="mailto:igdtuieee@gmail.com" className="underline">igdtuieee@gmail.com</a></p>
                     </div>
 
+                    {/* Navigation Links */}
                     <div className="mb-8 md:mb-0" data-aos="fade-up">
                         <h3 className="font-bold mb-2">Links</h3>
                         <ul className="space-y-2">
@@ -42,29 +43,32 @@ const Footer = () => {
                         </ul>
                     </div>
 
+                    {/* Social Media Links */}
                     <div className="mb-8 md:mb-0" data-aos="fade-left">
                         <h3 className="font-bold mb-2">Follow Us</h3>
                         <div className="flex justify-center sm:justify-start space-x-4">
-                            <a href="#facebook" className="text-[#ffffff] hover:text-[#00c6ff] transition-colors">
+                            <a href="#facebook" className="text-white hover:text-[#3b5998] transition-colors">
                                 <FaFacebookF size={20} />
                             </a>
-                            <a href="#instagram" className="text-[#ffffff] hover:text-[#00c6ff] transition-colors">
+                            <a href="#instagram" className="text-white hover:text-[#e4405f] transition-colors">
                                 <FaInstagram size={20} />
                             </a>
-                            <a href="#twitter" className="text-[#ffffff] hover:text-[#00c6ff] transition-colors">
+                            <a href="#twitter" className="text-white hover:text-[#1da1f2] transition-colors">
                                 <FaTwitter size={20} />
                             </a>
-                            <a href="#linkedin" className="text-[#ffffff] hover:text-[#00c6ff] transition-colors">
+                            <a href="#linkedin" className="text-white hover:text-[#0077b5] transition-colors">
                                 <FaLinkedin size={20} />
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="mt-5 text-center text-xs" data-aos="zoom-in" data-aos-duration="800">
-                    <p>This website is developed with <span className="text-[#7042f8]">❤️</span> by IEEE Web Admin. Team</p>
+
+                <div style={{ textAlign: 'center' }}>
+                    <p>This website is developed with <span style={{ color: '#7042f8' }}>❤️</span> by IEEE Web Admin. Team</p>
                     <p>IEEE IGDTUW 2024 | All rights reserved.</p>
                 </div>
-            </footer>
+
+            </div>
         </div>
     );
 };
