@@ -62,10 +62,10 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
+                <br/><br/>
                 <div style={{ textAlign: 'center' }}>
                     <p>This website is developed with <span style={{ color: '#7042f8' }}>❤️</span> by IEEE Web Admin. Team</p>
-                    <p>IEEE IGDTUW 2024 | All rights reserved.</p>
+                    <p> &copy; IEEE IGDTUW 2024 | All rights reserved.</p>
                 </div>
 
             </div>
@@ -74,4 +74,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
