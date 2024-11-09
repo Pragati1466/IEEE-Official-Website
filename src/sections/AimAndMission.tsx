@@ -10,7 +10,7 @@ import './1.css';
 const AimAndMission = () => {
     const icons = [FaRegLightbulb, FaLaptopCode, FaRegHandshake, FaHistory];
     const [animated, setAnimated] = useState(false);
-    const sectionRef = useRef(null); // Create a ref for the section
+    const sectionRef = useRef(null);
 
     useEffect(() => {
         AOS.init({ duration: 1000 }); // Initialize AOS with duration
@@ -23,13 +23,11 @@ const AimAndMission = () => {
                     }
                 });
             },
-            {
-                threshold: 0.1 // Trigger when 10% of the section is visible
-            }
+            { threshold: 0.1 }
         );
 
         if (sectionRef.current) {
-            observer.observe(sectionRef.current); // Start observing the section
+            observer.observe(sectionRef.current);
         }
 
         return () => {
@@ -40,7 +38,7 @@ const AimAndMission = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-12">
+        <section ref={sectionRef} className="py-12 overflow-hidden"> {/* Added overflow-hidden */}
             <div className="container mx-auto">
                 <h2
                     className={`text-center text-3xl font-bold mb-8 text-white transition-transform duration-700 ${animated ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
@@ -51,13 +49,12 @@ const AimAndMission = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {AIM.map((item, index) => {
                         const Icon = icons[index];
-                        const aosAnimation = index % 2 === 0 ? 'slide-right' : 'slide-left'; // Determine AOS animation based on index
-
+                        
                         return (
                             <div
                                 key={index}
-                                className={`p-6 rounded-lg bg-transparent border border-gray-500 cursor-pointer hover:shadow-lg relative`}
-                                data-aos={aosAnimation} // Apply AOS animation here
+                                className="p-6 rounded-lg bg-transparent border border-gray-500 cursor-pointer hover:shadow-lg relative"
+                                data-aos="fade-up" // Use fade-up to avoid horizontal scroll
                             >
                                 <div className="flex items-center justify-center mb-4">
                                     <Icon className="text-4xl text-teal-400" />
